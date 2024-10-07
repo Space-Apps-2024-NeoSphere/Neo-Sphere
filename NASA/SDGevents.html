@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events - Sustainable Scholars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .navbar {
+            position: relative;
+            z-index: 1000;
+            background: linear-gradient(90deg, #004d7f, #3f7590); /* Gradient background */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 20px; /* More padding for a better look */
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s, filter 0.3s; /* Adding filter transition */
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1); /* Slight brightness increase on hover */
+        }
+
+        .navbar-nav .nav-link {
+            margin-right: 25px;
+            color: white;
+            font-weight: 500; /* Slightly bolder text */
+            text-transform: uppercase; /* Uppercase text for a modern look */
+            transition: color 0.3s, transform 0.3s; /* Added transform transition */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d3b50b; /* Gold color on hover */
+            transform: translateY(-3px); /* Slight upward movement on hover */
+        }
+
+        .btn-outline-light {
+            border-color: white;
+            color: white; /* Ensure button text is white */
+            transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform transition */
+        }
+
+        .btn-outline-light:hover {
+            background-color: white;
+            color: #004d7f; /* Change text color to match the navbar */
+            transform: scale(1.05); /* Slightly increase size on hover */
+        }
+
+        .logo {
+            height: 60px; /* Slightly larger logo */
+            width: 60px; /* Slightly larger logo */
+            transition: .5s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            filter: brightness(1.1); /* Increase brightness on hover */
+        }
+
+        .navbar .logo {
+            font-size: 1.8em; /* Slightly larger font for the logo */
+            font-weight: bold;
+            color: #fff; /* Logo color */
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center; /* Centering items vertically */
+        }
+
+        /* Toggle Button */
+        .navbar-toggler {
+            border: none; /* Remove default border */
+            background-color: transparent; /* Make background transparent */
+        }
+
+        .navbar-toggler:focus {
+            outline: none; /* Remove focus outline */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Navbar links default state */
+        .navbar-nav .nav-link {
+            margin-right: 20px;
+            color: white;
+            transition: color 0.3s;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease-in-out, transform 0.3s ease; /* Smooth transition effect */
+        }
+
+        /* Change color to gold when hovered */
+        .navbar-nav .nav-link:hover {
+            color: #d3b50b; /* Change to gold on hover */
+            transform: translateY(-3px); /* Slight upward movement on hover */
+        }
+
+        /* Optional: Specific styling for the Sign Up button */
+        .navbar-nav .btn-outline-light:hover {
+            color: #004d7f; /* Change the font color of the button on hover */
+            border-color: #004d7f; /* Change the border color to match */
+        }
+        body {
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            font-family: 'Arial', sans-serif;
+        }
+        .event-section {
+            padding: 50px 0;
+        }
+        .event-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .event-card h4 {
+            color: #007bff;
+        }
+        .event-card p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar Section (same as SDG.html) -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #002147;">
+    <a class="navbar-brand" href="SDG.html">
+        <img class="logo" src="logo-no-background.png" alt="Sustainable Scholars Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a style="border: 0; padding-left: 25px; padding-right: 25px;" class="nav-item nav-link btn btn-outline-light ml-2" href="SDG.html">Home</a>
+            <a style="border: 0; padding-left: 25px; padding-right: 25px;" class="nav-item nav-link btn btn-outline-light ml-2" href="SDGgoals.html">Goals</a>
+            <a style="border: 0; padding-left: 25px; padding-right: 25px;" class="nav-item nav-link btn btn-outline-light ml-2 active" href="SDGevents.html">Events</a>
+            <a style="border: 0; padding-left: 25px; padding-right: 25px;" class="nav-item nav-link btn btn-outline-light ml-2" href="#">Login</a>
+            <a style="border: 0; padding-left: 25px; padding-right: 25px;" class="nav-item nav-link btn btn-outline-light ml-2" href="#">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Event Section -->
+<section class="event-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Upcoming Events</h2>
+
+        <!-- Event Card 1 -->
+        <div class="event-card p-4">
+            <h4>Global Climate Action Summit</h4>
+            <p><strong>Date:</strong> November 15, 2024</p>
+            <p><strong>Location:</strong> San Francisco, USA</p>
+            <p><strong>Description:</strong> A global gathering of leaders, innovators, and activists to discuss climate solutions and sustainability practices.</p>
+            <a href="#" class="btn btn-primary mt-2">Learn More</a>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="event-card p-4">
+            <h4>Sustainable Cities Conference</h4>
+            <p><strong>Date:</strong> December 5, 2024</p>
+            <p><strong>Location:</strong> Berlin, Germany</p>
+            <p><strong>Description:</strong> Focused on developing climate-resilient infrastructure and urban planning for a sustainable future.</p>
+            <a href="#" class="btn btn-primary mt-2">Learn More</a>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="event-card p-4">
+            <h4>Renewable Energy Innovation Expo</h4>
+            <p><strong>Date:</strong> January 20, 2025</p>
+            <p><strong>Location:</strong> Tokyo, Japan</p>
+            <p><strong>Description:</strong> Showcasing cutting-edge technologies and strategies for renewable energy adoption.</p>
+            <a href="#" class="btn btn-primary mt-2">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-light text-center mt-5">
+    <div class="container">
+        <p class="mb-0" style="padding: 15px;">© 2024 Sustainable Scholars. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
